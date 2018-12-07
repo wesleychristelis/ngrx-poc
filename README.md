@@ -1,5 +1,17 @@
 # ngrx-poc
 
-##POC for ng-rx using action, reducers, selectors and effects
+## Description
+POC for ng-rx using action, reducers, selectors and effects
 
-#When to use a centalised store
+## Why we want to use a central store
+
+
+## Environment Setup
+
+
+## NgRx Dev Tools:
+
+-- NgRX Store Freeze
+
+
+
