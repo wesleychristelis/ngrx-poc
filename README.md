@@ -15,5 +15,3 @@ Fundamental Parts of the centralised store solution is :
 
 * NgRX Store Freeze
 
-
-
