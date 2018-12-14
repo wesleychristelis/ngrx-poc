@@ -50,6 +50,11 @@ NgRx Schematics
 #### Installing Angular/Cli
 
     npm install -g @angular/cli 
+    
+#### Installing Store Libraries
+
+    * https://github.com/ngrx/platform
+    
 #### To Run the Development Backend Server
 
 We can start the sample application backend with the following command:
