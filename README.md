@@ -28,7 +28,10 @@ IMPORTANT: Use NPM 5 and above to make sure the package-json-lock is used
  * git (https://git-scm.com/downloads)
  * node js (https://nodejs.org/en/)
  * IDE : Visual Code / Web Storm
- * 
+ 
+#### Installing Angular/Cli
+
+    npm install -g @angular/cli 
 
 ## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
