@@ -19,6 +19,14 @@ NgRx Schematics
 
 ## Environment Setup
 
+IMPORTANT: Use NPM 5 and above to make sure the package-json-lock is used
+
+### Prerequisites
+ * git (https://git-scm.com/downloads)
+ * node js (https://nodejs.org/en/)
+ * IDE : Visual Code / Web Storm
+ * 
+
 ## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
 * NgRX Store Freeze (Ensure we right our reducers correctly)
