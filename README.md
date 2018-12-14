@@ -8,6 +8,7 @@ POC for ng-rx using action, reducers, selectors and effects
 Fundamental Parts of the centralised store solution is : 
 
 @effects: Fundamental part of central store solution.
+
 @selectors: 
 
 ## When to use a central store
