@@ -7,7 +7,8 @@ POC for ng-rx using action, reducers, selectors and effects
 
 Fundamental Parts of the centralised store solution is : 
 
-@effects:
+@effects: Fundamental part of central store solution.
+@selectors: 
 
 ## When to use a central store
 
@@ -16,7 +17,9 @@ Fundamental Parts of the centralised store solution is :
 ## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
 * NgRX Store Freeze (Ensure we right our reducers correctly)
-  * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture
+  * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture.
+  
+
 
 
 
