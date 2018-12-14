@@ -14,7 +14,16 @@ POC for ng-rx using action, reducers, selectors and effects
 
 **@actions**: Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains. The store will then broadcast the new version of the data to any intersted components that are subscribed and refflect the data accordingly.
   * Good example of an event __"CourseChangedAction"__ . Something has happened.
-  * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data,
+  * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data.
+  
+**reducers**
+Why is it called a reducer ? 
+    * 
+Reducers are used by the to to handle an ACTION that was dispatch. Inherently when a store recieves a dispatched ACTION. The Store will do nothing until the __reducer__ is defined.
+
+A reducers is a function that take the Current State of the store as a parameter, and the Action as a second parameter. It will then output a new Application State.
+
+Reducers get called after dispatching an action
   
 **@effects**: Fundamental part of central store solution.
 
