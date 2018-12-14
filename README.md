@@ -13,7 +13,10 @@ Fundamental Parts of the centralised store solution is :
 
 ## Environment Setup
 
-## NgRx Dev Tools:
+## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
-* NgRX Store Freeze
+* NgRX Store Freeze (Ensure we right our reducers correctly)
+  * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture
+
+
 
