@@ -3,9 +3,7 @@
 ## Description
 POC for ng-rx using action, reducers, selectors and effects
 
-## Why we want to use a central store
-
-Fundamental Parts of the centralised store solution is : 
+## Fundamental Parts of the centralised store solution is : 
 
 @effects: Fundamental part of central store solution.
 
@@ -15,18 +13,20 @@ NgRx Entity
 
 NgRx Schematics
 
-## When to use a central store
+## When / Why to use a central store
 
 ##### ExisTing Issues / What problems NgRx Solve:
 * Constantly Fetching the same data (large amount of users would cause performance problem)
 * Imporove user experince - we want to minimise the amount of "loading screens" we show the user
-* ##### Important Reasons
-  * Instand updates to UI components (Sync up the UI automatically with contacting the Backend).
-  * Implicitly cover cases where datat has been changed and the UI state must update.
+
+##### Important Reasons
+* Instand updates to UI components (Sync up the UI automatically with contacting the Backend).
+* __Implicitly__ cover cases where datat has been changed and the UI state must update.
+* __Decouple__ you data from your __components__, when the component gets destroyed, so does the data
 
 ## Environment Setup
 
-IMPORTANT: Use NPM 5 and above to make sure the package-json-lock is used
+**IMPORTANT**: Use NPM 5 and above to make sure the package-json-lock is used
 
 #### Prerequisites
  * git (https://git-scm.com/downloads)
