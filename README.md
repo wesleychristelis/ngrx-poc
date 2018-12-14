@@ -17,6 +17,9 @@ NgRx Schematics
 
 ## When to use a central store
 
+@selectors:
+
+
 ## Environment Setup
 
 IMPORTANT: Use NPM 5 and above to make sure the package-json-lock is used
