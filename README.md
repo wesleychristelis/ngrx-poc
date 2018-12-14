@@ -40,7 +40,7 @@ We can start the sample application backend with the following command:
 
 This is a small Node REST API server.
 
-##### To run the Development UI Server
+#### To run the Development UI Server
 
 To run the frontend part of our code, we will use the Angular CLI:
 
