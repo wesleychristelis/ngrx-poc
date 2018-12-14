@@ -9,6 +9,8 @@ Fundamental Parts of the centralised store solution is :
 
 @effects:
 
+## When to use a central store
+
 ## Environment Setup
 
 ## NgRx Dev Tools:
