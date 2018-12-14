@@ -18,21 +18,17 @@ NgRx Schematics
 ## When to use a central store
 
 ##### ExisTing Issues / What problems NgRx Solve:
-* Constantly Fetchin the same data (large amount of users would cause performance problem)
+* Constantly Fetching the same data (large amount of users would cause performance problem)
 * Imporove user experince - we want to minimise the amount of "loading screens" we show the user
 * ##### Important Reasons
-  * Instand updates to UI components (Sync up the UI automatically with contacting the Backend)
-  *
-
-
-@selectors:
-
+  * Instand updates to UI components (Sync up the UI automatically with contacting the Backend).
+  * Implicitly cover cases where datat has been changed and the UI state must update.
 
 ## Environment Setup
 
 IMPORTANT: Use NPM 5 and above to make sure the package-json-lock is used
 
-### Prerequisites
+#### Prerequisites
  * git (https://git-scm.com/downloads)
  * node js (https://nodejs.org/en/)
  * IDE : Visual Code / Web Storm
