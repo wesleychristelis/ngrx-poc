@@ -3,7 +3,14 @@
 ## Description
 POC for ng-rx using action, reducers, selectors and effects
 
-## Fundamental Parts of the centralised store solution is : 
+## Fundamental Parts of the centralised store solution is :
+
+#### Overview of Architecture
+* Data is Immutable and belongs to the store.
+* Components subscribe to the store service
+* To modify Data components need to report and event in the for of an ACTION.
+* The store will then act / handle on the event.
+* Store will emit a new version of the data to any subscribed components.
 
 **@actions**: Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains. The store will then broadcast the new version of the data to any intersted components that are subscribed and refflect the data accordingly.
   * Good example of an event __"CourseChangedAction"__ . Something has happened.
@@ -16,12 +23,6 @@ POC for ng-rx using action, reducers, selectors and effects
 NgRx Entity
 
 NgRx Schematics
-
-#### Overview of Architecture
-* Data is Immutable and belongs to the store.
-* Components subscribe to the store service
-* To modify Data components need to report and event in the for of an ACTION.
-
 
 
 ## When / Why to use a central store
