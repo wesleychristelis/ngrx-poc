@@ -17,6 +17,14 @@ NgRx Schematics
 
 ## When to use a central store
 
+##### ExisTing Issues / What problems NgRx Solve:
+* Constantly Fetchin the same data (large amount of users would cause performance problem)
+* Imporove user experince - we want to minimise the amount of "loading screens" we show the user
+* ##### Important Reasons
+  * Instand updates to UI components (Sync up the UI automatically with contacting the Backend)
+  *
+
+
 @selectors:
 
 
