@@ -1,4 +1,4 @@
-# NgRx-poc
+# NgRx-poc (Centralised store pattern)
 
 ## Description
 POC for ng-rx using action, reducers, selectors and effects
@@ -11,6 +11,10 @@ Fundamental Parts of the centralised store solution is :
 
 @selectors: 
 
+NgRx Entity
+
+NgRx Schematics
+
 ## When to use a central store
 
 ## Environment Setup
@@ -19,6 +23,7 @@ Fundamental Parts of the centralised store solution is :
 
 * NgRX Store Freeze (Ensure we right our reducers correctly)
   * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture.
+* Router Store integration module
   
 
 
