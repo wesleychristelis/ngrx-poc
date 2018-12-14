@@ -32,6 +32,22 @@ IMPORTANT: Use NPM 5 and above to make sure the package-json-lock is used
 #### Installing Angular/Cli
 
     npm install -g @angular/cli 
+#### To Run the Development Backend Server
+
+We can start the sample application backend with the following command:
+
+    npm run server
+
+This is a small Node REST API server.
+
+##### To run the Development UI Server
+
+To run the frontend part of our code, we will use the Angular CLI:
+
+    npm start 
+
+The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
+
 
 ## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
