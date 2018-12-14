@@ -3,6 +3,8 @@ import {Course} from "../model/course";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {CoursesService} from "../services/courses.service";
+import { Store } from '@ngrx/store';
+import { AppState } from '../../reducers';
 
 @Component({
     selector: 'home',
@@ -17,8 +19,12 @@ export class HomeComponent implements OnInit {
 
     advancedCourses$: Observable<Course[]>;
 
-    constructor(private coursesService: CoursesService) {
 
+    // The store Store<AppState> is an observable of Application State
+    // Because it is an observable we should not directly modify the data it emits.
+    // To modify the data we dispatch an action
+    constructor(private coursesService: CoursesService, private store: Store<AppState>) {
+        
     }
 
     ngOnInit() {
