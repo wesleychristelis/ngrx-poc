@@ -1,11 +1,6 @@
-
-
-
 import {Request, Response} from 'express';
 import {LESSONS} from "./db-data";
 import {setTimeout} from "timers";
-
-
 
 export function searchLessons(req: Request, res: Response) {
 
@@ -36,6 +31,4 @@ export function searchLessons(req: Request, res: Response) {
     setTimeout(() => {
         res.status(200).json({payload: lessonsPage});
     },1000);
-
-
 }

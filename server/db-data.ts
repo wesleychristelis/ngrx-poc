@@ -2,12 +2,11 @@
 export const USERS = {
   1: {
       id: 1,
-      email: 'test@angular-university.io',
+      email: 'test@wesley.org',
       password:'test'
   }
 
 };
-
 
 export const COURSES = {
     0: {
@@ -95,7 +94,6 @@ export const COURSES = {
         promo:false
     },
 };
-
 
 export const LESSONS = {
 

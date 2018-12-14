@@ -1,7 +1,6 @@
 import {Request, Response} from 'express';
 import {COURSES} from "./db-data";
 
-
 export function saveCourse(req: Request, res: Response) {
 
     console.log("Saving course ...");
@@ -15,6 +14,5 @@ export function saveCourse(req: Request, res: Response) {
     };
 
     res.status(200).json(COURSES[id]);
-
 }
 
