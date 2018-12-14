@@ -5,9 +5,13 @@ POC for ng-rx using action, reducers, selectors and effects
 
 ## Fundamental Parts of the centralised store solution is : 
 
-@effects: Fundamental part of central store solution.
+**@action**: Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains.
+  * Good example of an event __"CourseChangedAction"__ . Something has happened.
+  * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data,
 
-@selectors: 
+**@effects**: Fundamental part of central store solution.
+
+**@selectors**: 
 
 NgRx Entity
 
@@ -23,6 +27,8 @@ NgRx Schematics
 * Instand updates to UI components (Sync up the UI automatically with contacting the Backend).
 * __Implicitly__ cover cases where datat has been changed and the UI state must update.
 * __Decouple__ you data from your __components__, when the component gets destroyed, so does the data
+* Components will be a pure representation of state. No longer responsible for fetching and storing the data.
+* Data is protected and owned by the store.
 
 ## Environment Setup
 
