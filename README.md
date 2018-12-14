@@ -54,11 +54,12 @@ NgRx Schematics
 #### Installing Store Libraries
 
     * NgRx Git (https://github.com/ngrx/platform) && (https://ngrx.io/)
-    "@ngrx/effects"
-    "@ngrx/entity"
-    "@ngrx/router-store"
+    "@ngrx/effects" a lib for reflecting the state of the stor ein the outside world.
+    "@ngrx/entity" loading entities in a sinplified way
+    "@ngrx/router-store" give us integration between the store, dev tools and the router.
     "@ngrx/store"
-    "@ngrx/store-devtools"
+    "@ngrx/store-devtools" browser pluign to inspect store
+    "@ngrx/schematics" extension to the angualr cli , allows us to quickly scaffold code.      (https://github.com/ngrx/platform/tree/master/docs/schematics)
         
     
 #### To Run the Development Backend Server
