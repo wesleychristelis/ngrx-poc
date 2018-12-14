@@ -1,4 +1,4 @@
-# ngrx-poc
+# NgRx-poc
 
 ## Description
 POC for ng-rx using action, reducers, selectors and effects
