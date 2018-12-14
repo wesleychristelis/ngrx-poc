@@ -9,7 +9,6 @@ import {MatButtonModule} from "@angular/material/button";
 import { StoreModule } from '@ngrx/store';
 import {AuthService} from "./auth.service";
 
-
 @NgModule({
     imports: [
         CommonModule,

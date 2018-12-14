@@ -21,8 +21,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {RouterModule, Routes} from "@angular/router";
 
-
-
 export const coursesRoutes: Routes = [
     {
         path: "",
@@ -37,8 +35,6 @@ export const coursesRoutes: Routes = [
         }
     }
 ];
-
-
 
 @NgModule({
     imports: [

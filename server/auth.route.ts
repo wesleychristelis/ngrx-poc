@@ -3,7 +3,7 @@ import {authenticate} from "./db-data";
 
 export function loginUser(req: Request, res: Response) {
 
-    console.log("User login attempt ...");
+    console.log("User login attempt ..." + req.body);
 
     const {email, password} = req.body;
 

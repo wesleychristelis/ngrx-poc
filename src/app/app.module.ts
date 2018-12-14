@@ -22,11 +22,10 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-s
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers';
 
-
 const routes: Routes = [
     {
         path: 'courses',
-        loadChildren: './courses/courses.module#CoursesModule',
+        loadChildren: './courses/courses.module#CoursesModule', // Lazy loaded modeule , it will only load when we navigate to one of the courses screens
         canActivate: [],
     },
     {
@@ -34,7 +33,6 @@ const routes: Routes = [
         redirectTo: '/'
     }
 ];
-
 
 @NgModule({
     declarations: [
@@ -50,6 +48,7 @@ const routes: Routes = [
         MatSidenavModule,
         MatListModule,
         MatToolbarModule,
+        // login component has own module
         AuthModule.forRoot(),
         // new store add here:
         StoreModule.forRoot(reducers, { metaReducers }),
