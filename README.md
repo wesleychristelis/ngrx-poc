@@ -53,7 +53,13 @@ NgRx Schematics
     
 #### Installing Store Libraries
 
-    * https://github.com/ngrx/platform
+    * NgRx Git (https://github.com/ngrx/platform) && (https://ngrx.io/)
+    "@ngrx/effects"
+    "@ngrx/entity"
+    "@ngrx/router-store"
+    "@ngrx/store"
+    "@ngrx/store-devtools"
+        
     
 #### To Run the Development Backend Server
 
