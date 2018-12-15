@@ -18,10 +18,11 @@ POC for ng-rx using action, reducers, selectors and effects
   
 **@reducers**
 Why is it called a reducer ? 
+Because its signature is the same as the "reduce" functional programming operation
     * 
 Reducers are used by the to to handle an ACTION that was dispatch. Inherently when a store recieves a dispatched ACTION. The Store will do nothing until the __reducer__ is defined.
 
-A reducers is a function that take the Current State of the store as a parameter, and the Action as a second parameter. It will then output a new Application State.
+A reducers is a function that take the Current State of the store as a parameter, and the Action as a second parameter. It will then output a new Application State. Always create a new object and not mutate an existing object.
 
 Reducers get called after dispatching an action
   
