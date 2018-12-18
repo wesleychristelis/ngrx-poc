@@ -9,19 +9,9 @@ import {Observable} from "rxjs";
 })
 export class AppComponent implements OnInit {
 
+    constructor() { }
 
+    ngOnInit() { }
 
-    constructor() {
-
-    }
-
-    ngOnInit() {
-
-
-    }
-
-    logout() {
-    }
-
-
+    logout() { }
 }

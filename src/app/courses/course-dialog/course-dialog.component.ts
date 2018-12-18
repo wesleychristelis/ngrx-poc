@@ -17,16 +17,13 @@ export class CourseDialogComponent implements OnInit {
     form: FormGroup;
     description:string;
 
-    constructor(
-        private coursesService: CoursesService,
-        private fb: FormBuilder,
-        private dialogRef: MatDialogRef<CourseDialogComponent>,
+    constructor(private coursesService: CoursesService, private fb: FormBuilder, private dialogRef: MatDialogRef<CourseDialogComponent>,
+        
         @Inject(MAT_DIALOG_DATA) course:Course ) {
 
         this.courseId = course.id;
 
         this.description = course.description;
-
 
         this.form = fb.group({
             description: [course.description, Validators.required],
@@ -41,9 +38,7 @@ export class CourseDialogComponent implements OnInit {
 
     }
 
-
     save() {
-
         const changes = this.form.value;
 
         this.coursesService.saveCourse(this.courseId, changes)
@@ -55,5 +50,4 @@ export class CourseDialogComponent implements OnInit {
     close() {
         this.dialogRef.close();
     }
-
 }
