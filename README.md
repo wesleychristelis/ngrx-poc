@@ -24,7 +24,7 @@ Reducers are used by the store handle an ACTION that was dispatched. Inherently 
 
 A reducers is a function that take the Current State of the store as a parameter, and the Action as a second parameter. It will then output a new Application State. Always create a new object and not mutate an existing object.
 
-Reducers get called after dispatching an action
+Reducers get called after dispatching an action, the "reducer function" is used to calculate the new store state in response to its corresponding action.
   
 **@effects**: Fundamental part of central store solution.
 
@@ -33,7 +33,6 @@ Reducers get called after dispatching an action
 NgRx Entity
 
 NgRx Schematics
-
 
 ## When / Why to use a central store
 
@@ -94,8 +93,3 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
 * NgRX Store Freeze (Ensure we right our reducers correctly)
   * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture.
 * Router Store integration module
-  
-
-
-
-
