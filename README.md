@@ -17,14 +17,18 @@ POC for ng-rx using action, reducers, selectors and effects
   * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data.
   
 **@reducers**
+
 Why is it called a reducer ? 
+
 Because its signature is the same as the "reduce" functional programming operation.
 
-Reducers are used by the store handle an ACTION that was dispatched. Inherently when a store recieves a dispatched ACTION. The Store will do nothing until the __reducer__ is defined.
+* Reducers are used by the store handle an ACTION that was dispatched. Inherently when a store recieves a dispatched ACTION. The Store will do nothing until the __reducer__ is defined.
 
-A reducers is a function that take the Current State of the store as a parameter, and the Action as a second parameter. It will then output a new Application State. Always create a new object and not mutate an existing object.
+* A reducers is a function that take the Current State of the store as a parameter, and the Action as a second parameter. It will then output a new Application State. Always create a new object and not mutate an existing object.
 
-Reducers get called after dispatching an action, the "reducer function" is used to calculate the new store state in response to its corresponding action.
+* Reducers get called after dispatching an action, the "reducer function" is used to calculate the new store state in response to its corresponding action.
+
+*All reducers are called at application statrtup
   
 **@effects**: Fundamental part of central store solution.
 
