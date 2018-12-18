@@ -6,13 +6,16 @@ POC for ng-rx using action, reducers, selectors and effects
 ## Fundamental Parts of the centralised store solution is :
 
 #### Overview of Architecture
+
 * Data is Immutable and belongs to the store.
 * Components subscribe to the store service
 * To modify Data components need to report and event in the for of an ACTION.
 * The store will then act / handle on the event.
 * Store will emit a new version of the data to any subscribed components.
 
-**@actions**: Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains. The store will then broadcast the new version of the data to any intersted components that are subscribed and refflect the data accordingly.
+**@actions**: 
+
+Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains. The store will then broadcast the new version of the data to any intersted components that are subscribed and refflect the data accordingly.
   * Good example of an event __"CourseChangedAction"__ . Something has happened.
   * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data.
   
@@ -28,9 +31,11 @@ Because its signature is the same as the "reduce" functional programming operati
 
 * Reducers get called after dispatching an action, the "reducer function" is used to calculate the new store state in response to its corresponding action.
 
-*All reducers are called at application statrtup
+* All reducers are called at application statrtup
   
-**@effects**: Fundamental part of central store solution.
+**@effects**: 
+
+Fundamental part of central store solution.
 
 **@selectors**: 
 
