@@ -34,7 +34,7 @@ Components __report__ and __event__ back to the store and this is known as an __
 
 **Naming Convention around ACTIONS best practice are as follows:**
 
-The source page of the action, it is important to keep the source as specific as possible. eg Login page
+The **source page** or **origin** of the action, it is important to keep the source as specific as possible. eg Login page
 [View Course Page]
 
 Event: what was the event associated with the action
