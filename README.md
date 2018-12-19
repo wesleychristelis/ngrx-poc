@@ -53,10 +53,9 @@ There are 2 types of effects:
 2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
 
 
-NgRx Entity
+__NgRx Entity__
 
-NgRx Schematics
-
+* A new NgRx library for storing a collection of entities
 
 
 ## When / Why to use a central store
@@ -88,12 +87,12 @@ NgRx Schematics
 #### Installing Store Libraries
 
      * NgRx Git (https://github.com/ngrx/platform) && (https://ngrx.io/)
-    "@ngrx/effects" a lib for reflecting the state of the stor ein the outside world.
-    "@ngrx/entity" loading entities in a sinplified way
-    "@ngrx/router-store" give us integration between the store, dev tools and the router.
+    "@ngrx/effects" a lib for reflecting the state of the store in the outside world.
+    "@ngrx/entity" **loading entities in a simplified way**
+    "@ngrx/router-store" **give us integration between the store, dev tools and the router.**
     "@ngrx/store"
-    "@ngrx/store-devtools" browser pluign to inspect store
-    "@ngrx/schematics" extension to the angualr cli , allows us to quickly scaffold code.      (https://github.com/ngrx/platform/tree/master/docs/schematics)
+    "@ngrx/store-devtools" **browser plugin to inspect store**
+    "@ngrx/schematics" **extension to the angualr cli , allows us to quickly scaffold code.**      (https://github.com/ngrx/platform/tree/master/docs/schematics)
         
     
 #### To Run the Development Backend Server
