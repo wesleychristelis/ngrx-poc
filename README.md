@@ -43,7 +43,14 @@ The store is an observable of application state. Therefore if you subscribe to t
  
 **@effects**: 
 
-Fundamental part of central store solution.
+Allows us to handle store side effects. Side effects are things we want to happen when certain action / event occurs. We act in response to something.
+
+__EXAMPLE:__ When a user logs in , we want to store in the state or the information in local storage or in a cookie. We use the store, so that if a user accidently refreshed the page, we want the state to be injected back into the store. Bearing in mind the store is purely memory. We can also use it to synchronise the state of the app with a DB
+
+There are 2 types of effects:
+
+1. Where effects produce other actions
+2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
 
 
 NgRx Entity
@@ -108,6 +115,12 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
 
 ## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
-* NgRX Store Freeze (Ensure we right our reducers correctly)
-  * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture.
-* Router Store integration module
+* NgRX Store Freeze (Ensure we right our reducers correctly) (https://github.com/brandonroberts/ngrx-store-freeze)
+  * npm i --save-dev ngrx-store-freeze
+  * Helps make sure we don't mutate the store data at the level of our components, so we indeed follow the principles of the store             architecture.
+  * It ensures this by making your store state immutable in dev mode.
+  
+  
+* Router Store integration module (https://github.com/ngrx/router-store)
+  * Allows for time travel of the store
+  * https://github.com/ngrx/platform/blob/master/docs/router-store/api.md
