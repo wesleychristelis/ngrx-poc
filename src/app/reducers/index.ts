@@ -5,18 +5,19 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
+import {storeFreeze} from 'ngrx-store-freeze';
 import { environment } from '../../environments/environment';
 import { authReducer, AuthState } from '../auth/auth.reducer';
 
 export interface AppState {
-  auth: AuthState
+  //auth: AuthState
 }
 
 // For each property in AppState we need to specify a reducer function
 export const reducers: ActionReducerMap<AppState> = {
-  auth: authReducer
+  //auth: authReducer
 };
 
-export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [storeFreeze] : [];
 
 
