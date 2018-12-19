@@ -32,16 +32,24 @@ Because its signature is the same as the "reduce" functional programming operati
 * Reducers get called after dispatching an action, the "reducer function" is used to calculate the new store state in response to its corresponding action.
 
 * All reducers are called at application statrtup
+
+**@selectors**: 
+
+Used to consume data from the store.
+The store is an observable of application state. Therefore if you subscribe to the store, you will recieve instances of applciation state any time it changes.
+
+
   
 **@effects**: 
 
 Fundamental part of central store solution.
 
-**@selectors**: 
 
 NgRx Entity
 
 NgRx Schematics
+
+
 
 ## When / Why to use a central store
 
