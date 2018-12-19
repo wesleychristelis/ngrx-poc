@@ -6,16 +6,17 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
+import { authReducer, AuthState } from '../auth/auth.reducer';
 
-// Defines the data content / structure of the data inside the store.
 export interface AppState {
-
+  auth: AuthState
 }
 
-//
+// For each property in AppState we need to specify a reducer function
 export const reducers: ActionReducerMap<AppState> = {
-
+  auth: authReducer
 };
 
-//
 export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];
+
+

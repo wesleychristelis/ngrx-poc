@@ -23,9 +23,7 @@ export class HomeComponent implements OnInit {
     // The store Store<AppState> is an observable of Application State
     // Because it is an observable we should not directly modify the data it emits.
     // To modify the data we dispatch an action
-    constructor(private coursesService: CoursesService, private store: Store<AppState>) {
-        
-    }
+    constructor(private coursesService: CoursesService, private store: Store<AppState>) { }
 
     ngOnInit() {
 
@@ -42,7 +40,5 @@ export class HomeComponent implements OnInit {
         this.promoTotal$ = courses$.pipe(
             map(courses => courses.filter(course => course.promo).length)
         );
-
     }
-
 }

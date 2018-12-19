@@ -21,20 +21,19 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-s
 
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers';
-
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     {
         path: 'courses',
-        loadChildren: './courses/courses.module#CoursesModule',
-        canActivate: [],
+        loadChildren: './courses/courses.module#CoursesModule', // Lazy loaded module , it will only load when we navigate to one of the courses screens
+        canActivate: [AuthGuard],
     },
     {
         path: "**",
         redirectTo: '/'
     }
 ];
-
 
 @NgModule({
     declarations: [
@@ -50,6 +49,7 @@ const routes: Routes = [
         MatSidenavModule,
         MatListModule,
         MatToolbarModule,
+        // login component has own module
         AuthModule.forRoot(),
         // new store add here:
         StoreModule.forRoot(reducers, { metaReducers }),
