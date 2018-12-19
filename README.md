@@ -123,4 +123,4 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
   
 * Router Store integration module (https://github.com/ngrx/router-store)
   * Allows for time travel of the store
-  * 
+  * https://github.com/ngrx/platform/blob/master/docs/router-store/api.md
