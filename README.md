@@ -43,7 +43,7 @@ The store is an observable of application state. Therefore if you subscribe to t
  
 **@effects**: 
 
-Allows us to handle store side effects. Side effects ate thomgs we want to happen when certain events or state changes inour store. We act in response to something.
+Allows us to handle store side effects. Side effects are things we want to happen when certain action / event occurs. We act in response to something.
 
 __EXAMPLE:__ When a user logs in , we want to store in the state or the information in local storage or in a cookie. We use the store, so that if a user accidently refreshed the page, we want the state to be injected back into the store. Bearing in mind the store is purely memory. We can also use it to synchronise the state of the app with a DB
 
