@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import { AppState } from './reducers';
 import { Logout } from './auth/auth.actions';
 import { map } from 'rxjs/operators';
+import { isLoggedIn, isLoggedOut } from './auth/auth.selectors';
 
 @Component({
   selector: 'app-root',
@@ -23,20 +24,13 @@ export class AppComponent implements OnInit {
       // We can derive slices of the state directly from the store
       this.isLoggedIn$ = this.store
       .pipe(
-        map(state => {
-          console.log("logged In: " + state.auth.loggedIn);
-          return state.auth.loggedIn;
-        })
+        select(isLoggedIn)
       );
 
       this.isLoggedOut$ = this.store
       .pipe(
-        map(state => {
-          console.log("logged Out: " + !state.auth.loggedIn);
-          return !state.auth.loggedIn;
-        })
+        select(isLoggedOut)
       );
-      
     }
 
     logout() {
