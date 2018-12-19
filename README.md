@@ -31,6 +31,16 @@ POC for ng-rx using action, reducers, selectors and effects
 Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains. The store will then broadcast the new version of the data to any intersted components that are subscribed and refflect the data accordingly.
   * Good example of an event __"CourseChangedAction"__ . Something has happened.
   * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data.
+
+**Naming Convention around ACTIONS best practice are as follows:**
+
+The source page of the action, it is important to keep the source as specific as possible. eg Login page
+[View Course Page]
+
+Event: what was the event associated with the action
+"Course Requested"
+
+Action Name: "[View Course Page] Course Requested"
   
 **@reducers**
 
