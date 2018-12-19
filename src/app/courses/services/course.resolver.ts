@@ -16,6 +16,8 @@ export class CourseResolver implements Resolve<Course> {
 
     }
 
+    // Every time we call the course page we are getting the information again
+    // We must refactor to use the store
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Course> {
         return this.coursesService.findCourseById(route.params['id']);
     }
