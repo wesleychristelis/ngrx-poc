@@ -30,12 +30,8 @@ export class CoursesCardListComponent implements OnInit {
 
         dialogConfig.data = course;
 
-        const dialogRef = this.dialog.open(CourseDialogComponent,
-            dialogConfig);
-
-
+        const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
     }
-
 }
 
 
