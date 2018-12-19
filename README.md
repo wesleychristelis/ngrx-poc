@@ -47,6 +47,11 @@ Allows us to handle store side effects. Side effects are things we want to happe
 
 __EXAMPLE:__ When a user logs in , we want to store in the state or the information in local storage or in a cookie. We use the store, so that if a user accidently refreshed the page, we want the state to be injected back into the store. Bearing in mind the store is purely memory. We can also use it to synchronise the state of the app with a DB
 
+There are 2 types of effects:
+
+1. Where effects produce other actions
+2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
+
 
 NgRx Entity
 
