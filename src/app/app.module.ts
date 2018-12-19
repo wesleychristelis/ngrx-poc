@@ -54,6 +54,8 @@ const routes: Routes = [
         // new store add here:
         StoreModule.forRoot(reducers, { metaReducers }),
         !environment.production ? StoreDevtoolsModule.instrument() : [], // Store dev tools only active if not in Production
+        EffectsModule.forRoot([]),
+
     ],
     providers: [],
     bootstrap: [AppComponent]
