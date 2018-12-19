@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import { StoreModule } from '@ngrx/store';
 import {AuthService} from "./auth.service";
+import * as fromAuth from './auth.reducer';
 
 @NgModule({
     imports: [
@@ -17,7 +18,7 @@ import {AuthService} from "./auth.service";
         MatInputModule,
         MatButtonModule,
         RouterModule.forChild([{path: '', component: LoginComponent}]),
-
+        StoreModule.forFeature('auth', fromAuth.authReducer), // declare reducers that are specific to this module only 
     ],
     declarations: [LoginComponent],
     exports: [LoginComponent]

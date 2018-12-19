@@ -25,7 +25,7 @@ import { reducers, metaReducers } from './reducers';
 const routes: Routes = [
     {
         path: 'courses',
-        loadChildren: './courses/courses.module#CoursesModule', // Lazy loaded modeule , it will only load when we navigate to one of the courses screens
+        loadChildren: './courses/courses.module#CoursesModule', // Lazy loaded module , it will only load when we navigate to one of the courses screens
         canActivate: [],
     },
     {

@@ -7,6 +7,7 @@ export enum AuthActionTypes {
   LogoutAction = '[Logout] Action'
 }
 
+// We dispatch this action, with type property of AuthActionTypes.LoginAction
 export class Login implements Action {
  
   constructor(public payload: {user: User}){}
@@ -14,8 +15,11 @@ export class Login implements Action {
   readonly type = AuthActionTypes.LoginAction;
 }
 
-// export class Logout implements Action {
-//   readonly type = AuthActionTypes.LogoutAction;
-// }
+export class Logout implements Action {
 
-export type AuthActions = Login;
+  constructor(){}
+
+  readonly type = AuthActionTypes.LogoutAction;
+}
+
+export type AuthActions = Login | Logout; // union type

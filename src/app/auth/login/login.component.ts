@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
     .subscribe(
       noop, // Utiltity from RxJS
       (error) => { 
-      debugger;
         alert('Login failed' +  error) 
       }
     );

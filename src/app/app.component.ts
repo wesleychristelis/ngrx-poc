@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {Observable} from "rxjs";
+import { AppState } from './reducers';
+import { Logout } from './auth/auth.actions';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +12,35 @@ import {Observable} from "rxjs";
 })
 export class AppComponent implements OnInit {
 
-    constructor() { }
+    isLoggedIn$: Observable<boolean>;
+    isLoggedOut$: Observable<boolean>;
 
-    ngOnInit() { }
+    constructor(private store: Store<AppState>) { }
 
-    logout() { }
+    ngOnInit() { 
+
+      // we can pipe on the observable to extract just the auth slice of the application state.
+      // We can derive slices of the state directly from the store
+      this.isLoggedIn$ = this.store
+      .pipe(
+        map(state => {
+          console.log("logged In: " + state.auth.loggedIn);
+          return state.auth.loggedIn;
+        })
+      );
+
+      this.isLoggedOut$ = this.store
+      .pipe(
+        map(state => {
+          console.log("logged Out: " + !state.auth.loggedIn);
+          return !state.auth.loggedIn;
+        })
+      );
+      
+    }
+
+    logout() {
+
+      this.store.dispatch(new Logout())
+     }
 }
