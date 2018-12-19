@@ -35,11 +35,12 @@ Because its signature is the same as the "reduce" functional programming operati
 
 **@selectors**: 
 
-Used to consume data from the store.
+Used to consume data from the store. A selector is basically a function that takes input from the store and generates as output a __"slice"__ or __*subset*__ of that state. Similar to the mapping function in RxJs but it solves an important problem. You do the calculation of derived state in an optimised way. 
+
+__EXAMPLE:__ if we are getting back from a store the same state i.e. it has not changed. Then we are always computing the exact same result. If the function of calculation is large , this can cause a performance overhead. As new version of the state are emitted all the time. We want the result to be calculated only if there is something to calculate. Selector can memeorise the last few calculations. In functional prpgramming this is called memorisation.
+
 The store is an observable of application state. Therefore if you subscribe to the store, you will recieve instances of applciation state any time it changes.
-
-
-  
+ 
 **@effects**: 
 
 Fundamental part of central store solution.
