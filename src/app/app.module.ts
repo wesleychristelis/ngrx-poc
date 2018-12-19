@@ -21,12 +21,13 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-s
 
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     {
         path: 'courses',
         loadChildren: './courses/courses.module#CoursesModule', // Lazy loaded module , it will only load when we navigate to one of the courses screens
-        canActivate: [],
+        canActivate: [AuthGuard],
     },
     {
         path: "**",

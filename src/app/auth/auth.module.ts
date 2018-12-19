@@ -9,6 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { StoreModule } from '@ngrx/store';
 import {AuthService} from "./auth.service";
 import * as fromAuth from './auth.reducer';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
     imports: [
@@ -27,7 +28,7 @@ export class AuthModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: AuthModule,
-            providers: [AuthService]
+            providers: [AuthService, AuthGuard]
         }
     }
 }
