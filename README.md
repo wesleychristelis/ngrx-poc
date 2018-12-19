@@ -121,4 +121,6 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
   * It ensures this by making your store state immutable in dev mode.
   
   
-* Router Store integration module
+* Router Store integration module (https://github.com/ngrx/router-store)
+  * Allows for time travel of the store
+  * 
