@@ -3,6 +3,19 @@
 ## Description
 POC for ng-rx using action, reducers, selectors and effects
 
+## When / Why to use a central store
+
+##### Existing Issues / What problems NgRx Solve:
+* Constantly Fetching the same data (large amount of users would cause performance problem)
+* Imporove user experince - we want to minimise the amount of "loading screens" we show the user
+
+##### Important Reasons
+* Instand updates to UI components (Sync up the UI automatically with contacting the Backend).
+* __Implicitly__ cover cases where datat has been changed and the UI state must update.
+* __Decouple__ you data from your __components__, when the component gets destroyed, so does the data
+* Components will be a pure representation of state. No longer responsible for fetching and storing the data.
+* Data is protected and owned by the store.
+
 ## Fundamental Parts of the centralised store solution is :
 
 #### Overview of Architecture
@@ -52,25 +65,6 @@ There are 2 types of effects:
 1. Where effects produce other actions
 2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
 
-
-__NgRx Entity__
-
-* A new NgRx library for storing a collection of entities
-
-
-## When / Why to use a central store
-
-##### Existing Issues / What problems NgRx Solve:
-* Constantly Fetching the same data (large amount of users would cause performance problem)
-* Imporove user experince - we want to minimise the amount of "loading screens" we show the user
-
-##### Important Reasons
-* Instand updates to UI components (Sync up the UI automatically with contacting the Backend).
-* __Implicitly__ cover cases where datat has been changed and the UI state must update.
-* __Decouple__ you data from your __components__, when the component gets destroyed, so does the data
-* Components will be a pure representation of state. No longer responsible for fetching and storing the data.
-* Data is protected and owned by the store.
-
 ## Environment Setup
 
 **IMPORTANT**: Use NPM 5 and above to make sure the package-json-lock is used
@@ -88,7 +82,7 @@ __NgRx Entity__
 
      * NgRx Git (https://github.com/ngrx/platform) && (https://ngrx.io/)
     "@ngrx/effects" a lib for reflecting the state of the store in the outside world.
-    "@ngrx/entity" **loading entities in a simplified way**
+    "@ngrx/entity" **loading entities in a simplified way, A new NgRx library for storing a collection of entities**
     "@ngrx/router-store" **give us integration between the store, dev tools and the router.**
     "@ngrx/store"
     "@ngrx/store-devtools" **browser plugin to inspect store**
