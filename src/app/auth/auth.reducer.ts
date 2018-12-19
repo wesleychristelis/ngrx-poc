@@ -21,9 +21,6 @@ export function authReducer(state = initialAuthState, action: AuthActions): Auth
    switch(action.type){
       
     case AuthActionTypes.LoginAction: {
-
-      console.log("LoginAction Reducer" + action.payload.user.email);
-
       // Always create a new object and not mutate an existing object
       return {
         loggedIn: true,
@@ -32,9 +29,6 @@ export function authReducer(state = initialAuthState, action: AuthActions): Auth
     }
 
     case AuthActionTypes.LogoutAction: {
-
-      console.log("LogoutAction Reducer" + state.user.email);
-
       // Always create a new object and not mutate an existing object
       return {
         loggedIn: false,
