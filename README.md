@@ -115,6 +115,10 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
 
 ## NgRx Dev Tools: (Setup include integration and router: Allows for full time travel debugging)
 
-* NgRX Store Freeze (Ensure we right our reducers correctly)
-  * Helps make sure we dont mutate the store data at the level of our components ,so we indeed follow the principles of the store             architecture.
+* NgRX Store Freeze (Ensure we right our reducers correctly) (https://github.com/brandonroberts/ngrx-store-freeze)
+  * (npm i --save-dev ngrx-store-freeze)
+  * Helps make sure we don't mutate the store data at the level of our components, so we indeed follow the principles of the store             architecture.
+  * It ensures this by making your store state immutable in dev mode.
+  
+  
 * Router Store integration module
