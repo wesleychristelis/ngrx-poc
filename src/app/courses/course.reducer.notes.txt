@@ -1,0 +1,19 @@
+// // NOTES:
+// // Why we dont store as an array?
+// // 1. what if the array is large the time complexity could be large
+// // 2. what about insertionn of courses , into various locations in the array
+// // 3. updating an item ?
+// // other arrays introduced will add a lot of boiler plate code , repeatedly. The same reducer logic needs to be applied to other collections
+// // The best way to store our collections would be in the form of a map and a corresponding collection of Id's
+
+// // We could do this , but the boiler plate code would be too much
+// export interface CoursesState {
+
+//     coursesEntities:{[key:number]: Course}; // we will use a map, however we lose the order in which the entities are sorted
+//     courseOrder: number[] // we keep the Id of a given course here
+// }
+
+// export interface LessonsState {
+
+//     lessons: {[key:number]: Lesson};
+// }

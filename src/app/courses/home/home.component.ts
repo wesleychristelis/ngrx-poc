@@ -3,8 +3,10 @@ import {Course} from "../model/course";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {CoursesService} from "../services/courses.service";
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from '../../reducers';
+import { AllCoursesRequested } from '../courses.actions';
+import { selectAllCourses, selectBeginnerCourses, selectAdvancedCourses, selectPromotionTotal } from '../course.selectors';
 
 @Component({
     selector: 'home',
@@ -23,22 +25,19 @@ export class HomeComponent implements OnInit {
     // The store Store<AppState> is an observable of Application State
     // Because it is an observable we should not directly modify the data it emits.
     // To modify the data we dispatch an action
-    constructor(private coursesService: CoursesService, private store: Store<AppState>) { }
+    constructor(private store: Store<AppState>) { }
 
     ngOnInit() {
 
-        const courses$ = this.coursesService.findAllCourses();
+        //Deprecated for use of NgRx , and use of effects and reducers
+        //const courses$ = this.coursesService.findAllCourses();
 
-        this.beginnerCourses$ = courses$.pipe(
-          map(courses => courses.filter(course => course.category === 'BEGINNER') )
-        );
+        this.store.dispatch(new AllCoursesRequested()); // populate the store with courses
 
-        this.advancedCourses$ = courses$.pipe(
-            map(courses => courses.filter(course => course.category === 'ADVANCED') )
-        );
+        this.beginnerCourses$ = this.store.pipe(select(selectBeginnerCourses));
 
-        this.promoTotal$ = courses$.pipe(
-            map(courses => courses.filter(course => course.promo).length)
-        );
+        this.advancedCourses$ = this.store.pipe(select(selectAdvancedCourses));
+
+        this.promoTotal$ = this.store.pipe(select(selectPromotionTotal));
     }
 }
