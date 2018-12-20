@@ -2,10 +2,12 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 import {ActivatedRoute} from "@angular/router";
 import {MatPaginator, MatTableDataSource} from "@angular/material";
 import {Course} from "../model/course";
-import {CoursesService} from "../services/courses.service";
 import {debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
 import {merge, fromEvent} from "rxjs";
 import {LessonsDataSource} from "../services/lessons.datasource";
+import { Store } from '@ngrx/store';
+import { AppState } from '../../reducers';
+import { PageQuery } from '../courses.actions';
 
 
 @Component({
@@ -23,16 +25,20 @@ export class CourseComponent implements OnInit, AfterViewInit {
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
-
-    constructor(private route: ActivatedRoute, private coursesService: CoursesService) {
+    constructor(private route: ActivatedRoute, private store: Store<AppState>) {
     }
 
     ngOnInit() {
-        this.course = this.route.snapshot.data["course"]; // Rersolver populates this snapshot
+        this.course = this.route.snapshot.data["course"]; // Resolver populates this snapshot
 
-        this.dataSource = new LessonsDataSource(this.coursesService);
+        this.dataSource = new LessonsDataSource(this.store);
 
-        this.dataSource.loadLessons(this.course.id, 0, 3);
+        const initialPage: PageQuery = {
+            pageIndex: 0,
+            pageSize: 3
+        }
+
+        this.dataSource.loadLessons(this.course.id, initialPage);
     }
 
     ngAfterViewInit() {
@@ -44,9 +50,11 @@ export class CourseComponent implements OnInit, AfterViewInit {
     }
 
     loadLessonsPage() {
-        this.dataSource.loadLessons(
-            this.course.id,
-            this.paginator.pageIndex,
-            this.paginator.pageSize);
+        const newPage: PageQuery = {
+            pageIndex: this.paginator.pageIndex,
+            pageSize: this.paginator.pageSize
+          };
+    
+          this.dataSource.loadLessons(this.course.id, newPage);
     }
 }

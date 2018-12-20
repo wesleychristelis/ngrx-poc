@@ -15,10 +15,9 @@ export enum CourseActionTypes {
     LessonsPageCancelled = '[Courses API] Lessons Page Cancelled'
   }
   
-
   export interface PageQuery {
     pageIndex: number;
-    pageSize:number;
+    pageSize: number;
   }
   
   export class LessonsPageRequested implements Action {
@@ -42,8 +41,7 @@ export enum CourseActionTypes {
     readonly type = CourseActionTypes.LessonsPageCancelled;
   
   }
-  
-  
+    
   export class CourseRequested implements Action {
   
     readonly type = CourseActionTypes.CourseRequested;
@@ -78,8 +76,6 @@ export enum CourseActionTypes {
   
     constructor(public payload: { course: Update<Course> }) {} // Update is a RxJs type used t update the entity in memory
   }
-
-
 
   export type CourseActions =
   CourseRequested
