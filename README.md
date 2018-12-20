@@ -25,12 +25,25 @@ POC for ng-rx using action, reducers, selectors and effects
 * To modify Data components need to report and event in the for of an ACTION.
 * The store will then act / handle on the event.
 * Store will emit a new version of the data to any subscribed components.
+* Components that use a store are known as container components
 
 **@actions**: 
 
 Components __report__ and __event__ back to the store and this is known as an __action__. Once the store handles tha action it will modify the state it contains. The store will then broadcast the new version of the data to any intersted components that are subscribed and refflect the data accordingly.
   * Good example of an event __"CourseChangedAction"__ . Something has happened.
   * Bad example is __"IncrementCounterAction"__ this is more a COMMAND. This is telling something how to modify its data.
+
+**Naming Convention around ACTIONS best practice are as follows:**
+
+The **source page** or **origin** of the action, it is important to keep the source as specific as possible. eg Login page
+
+[View Course Page]
+
+Event: what was the event associated with the action
+
+"Course Requested"
+
+Action Name: "[View Course Page] Course Requested"
   
 **@reducers**
 
@@ -50,6 +63,8 @@ Because its signature is the same as the "reduce" functional programming operati
 
 Used to consume data from the store. A selector is basically a function that takes input from the store and generates as output a __"slice"__ or __*subset*__ of that state. Similar to the mapping function in RxJs but it solves an important problem. You do the calculation of derived state in an optimised way. 
 
+Selectors are memoized functions it it remembers the last few calculations it did. 
+
 __EXAMPLE:__ if we are getting back from a store the same state i.e. it has not changed. Then we are always computing the exact same result. If the function of calculation is large , this can cause a performance overhead. As new version of the state are emitted all the time. We want the result to be calculated only if there is something to calculate. Selector can memeorise the last few calculations. In functional prpgramming this is called memorisation.
 
 The store is an observable of application state. Therefore if you subscribe to the store, you will recieve instances of applciation state any time it changes.
@@ -64,6 +79,11 @@ There are 2 types of effects:
 
 1. Where effects produce other actions
 2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
+
+#### NgRx Entity
+
+Is a useful library that handles collections in a smart manner. It exposes and adapter to easily insert , delete, update etc... items in a collection.
+
 
 ## Environment Setup
 
