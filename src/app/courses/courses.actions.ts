@@ -1,6 +1,7 @@
 import { Action } from "@ngrx/store";
 import { Course } from "./model/course";
 import { Update } from "@ngrx/entity";
+import { Lesson } from "./model/lesson";
 
 // All Ng Rx definitions linked to the course module
 export enum CourseActionTypes {
@@ -8,10 +9,40 @@ export enum CourseActionTypes {
     CourseLoaded = '[Courses API] Course Loaded', // // The Action that takes place after the call to the backend has returned the course
     AllCoursesRequested = '[Courses Home Page] All Courses Requested',
     AllCoursesLoaded = '[Courses API] All Courses Loaded',
-    CourseSaved = '[Edit Course Dialog] Course Saved'
+    CourseSaved = '[Edit Course Dialog] Course Saved',
+
+    LessonsPageRequested = '[Course Landing Page] Lessons Page Requested', // NgRx Paginated entity
+    LessonsPageLoaded = '[Courses API] Lessons Page Loaded',
+    LessonsPageCancelled = '[Courses API] Lessons Page Cancelled'
   }
   
+  export interface PageQuery {
+    pageIndex: number;
+    pageSize:number;
+  }
   
+  export class LessonsPageRequested implements Action {
+  
+    readonly type = CourseActionTypes.LessonsPageRequested;
+  
+    constructor(public payload: {courseId:number, page:PageQuery}) {}
+  
+  }
+  
+  export class LessonsPageLoaded implements Action {
+  
+    readonly type = CourseActionTypes.LessonsPageLoaded;
+  
+    constructor(public payload:{lessons: Lesson[]}) {}
+  
+  }
+  
+  export class LessonsPageCancelled implements Action {
+  
+    readonly type = CourseActionTypes.LessonsPageCancelled;
+  
+  }
+
   export class CourseRequested implements Action {
   
     readonly type = CourseActionTypes.CourseRequested;
@@ -48,9 +79,13 @@ export enum CourseActionTypes {
   }
 
 
-  export type CourseActions =
+
+export type CourseActions =
   CourseRequested
   | CourseLoaded
   | AllCoursesRequested
   | AllCoursesLoaded
-  | CourseSaved;
+  | CourseSaved
+  | LessonsPageRequested
+  | LessonsPageLoaded
+  | LessonsPageCancelled;
