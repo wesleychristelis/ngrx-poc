@@ -77,6 +77,9 @@ There are 2 types of effects:
 1. Where effects produce other actions
 2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
 
+#### NgRx Entity
+
+
 ## Environment Setup
 
 **IMPORTANT**: Use NPM 5 and above to make sure the package-json-lock is used
