@@ -25,6 +25,7 @@ POC for ng-rx using action, reducers, selectors and effects
 * To modify Data components need to report and event in the for of an ACTION.
 * The store will then act / handle on the event.
 * Store will emit a new version of the data to any subscribed components.
+* Components that use a store are known as container components
 
 **@actions**: 
 
@@ -78,6 +79,8 @@ There are 2 types of effects:
 2. Where the effect does not produce other actions. If this is the case NgRx needs to be informed of this using "dispatch: false" in the @effect decorator
 
 #### NgRx Entity
+
+Is a useful library that handles collections in a smart manner. It exposes and adapter to easily insert , delete, update etc... items in a collection.
 
 
 ## Environment Setup
