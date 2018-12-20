@@ -1,5 +1,5 @@
 
-
+// To store a collection of data in the store we need the NgRx Entity Lib
 export interface Course {
     id:number;
     description:string;

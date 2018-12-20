@@ -28,7 +28,7 @@ export class CourseComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        this.course = this.route.snapshot.data["course"];
+        this.course = this.route.snapshot.data["course"]; // Rersolver populates this snapshot
 
         this.dataSource = new LessonsDataSource(this.coursesService);
 
