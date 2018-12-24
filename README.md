@@ -84,6 +84,15 @@ There are 2 types of effects:
 
 Is a useful library that handles collections in a smart manner. It exposes and adapter to easily insert , delete, update etc... items in a collection.
 
+#### On Push Change Detection
+
+Misconception: Is that the compenents only updating themselves when the input changes, this is not entirely true.
+
+On Push also gets triggered when any observable emits a new value, if that observable is plugged in the template via the ASYNC pipe.
+
+What does not work is when we try mutated data at the level of the component directly.
+
+changeDetection: ChangeDetectionStrategy.OnPush can be chnage at the root component and all its sub components will have this setting propogated.
 
 ## Environment Setup
 
