@@ -3,9 +3,9 @@ import { Actions, ofType, Effect } from "@ngrx/effects";
 import { CoursesService } from "./services/courses.service";
 import { Store, select } from "@ngrx/store";
 import { AppState } from "../reducers";
-import { CourseRequested, CourseActionTypes, CourseLoaded, AllCoursesRequested, AllCoursesLoaded } from "./courses.actions";
+import { CourseRequested, CourseActionTypes, CourseLoaded, AllCoursesRequested, AllCoursesLoaded, LessonsPageRequested, LessonsPageCancelled, LessonsPageLoaded } from "./courses.actions";
 import { mergeMap, map, catchError, withLatestFrom, filter } from "rxjs/operators";
-import { throwError } from "rxjs";
+import { throwError, of } from "rxjs";
 import { allCoursesLoaded } from "./course.selectors";
 
 
@@ -39,4 +39,20 @@ export class CourseEffects {
           return throwError(err);
         })
       );
+    
+    @Effect()
+    loadLessonsPage$ = this.actions$.pipe(
+        ofType<LessonsPageRequested>(CourseActionTypes.LessonsPageRequested), // listen for this action
+        mergeMap(({payload}) => // combines the observables
+            this.coursesService.findLessons(payload.courseId, payload.page.pageIndex, payload.page.pageSize) // call the backend
+            .pipe(
+                catchError(err => {
+                    console.log('error loading a lessons page ', err);
+                    this.store.dispatch(new LessonsPageCancelled()); // if we have an error, dispatch cancel action
+                    return of([]);
+                })
+            )
+        ),
+        map(lessons => new LessonsPageLoaded({lessons})) // dispatch we have the lessons
+    );
 }

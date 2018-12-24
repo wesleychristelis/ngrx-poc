@@ -10,15 +10,14 @@ export enum CourseActionTypes {
     AllCoursesRequested = '[Courses Home Page] All Courses Requested',
     AllCoursesLoaded = '[Courses API] All Courses Loaded',
     CourseSaved = '[Edit Course Dialog] Course Saved',
-
-    LessonsPageRequested = '[Course Landing Page] Lessons Page Requested', // NgRx Paginated entity
+    LessonsPageRequested = '[Course Landing Page] Lessons Page Requested',
     LessonsPageLoaded = '[Courses API] Lessons Page Loaded',
     LessonsPageCancelled = '[Courses API] Lessons Page Cancelled'
   }
   
   export interface PageQuery {
     pageIndex: number;
-    pageSize:number;
+    pageSize: number;
   }
   
   export class LessonsPageRequested implements Action {
@@ -42,7 +41,7 @@ export enum CourseActionTypes {
     readonly type = CourseActionTypes.LessonsPageCancelled;
   
   }
-
+    
   export class CourseRequested implements Action {
   
     readonly type = CourseActionTypes.CourseRequested;
@@ -78,9 +77,7 @@ export enum CourseActionTypes {
     constructor(public payload: { course: Update<Course> }) {} // Update is a RxJs type used t update the entity in memory
   }
 
-
-
-export type CourseActions =
+  export type CourseActions =
   CourseRequested
   | CourseLoaded
   | AllCoursesRequested
