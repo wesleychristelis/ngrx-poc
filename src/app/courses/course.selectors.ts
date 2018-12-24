@@ -60,4 +60,9 @@ export const selectLessonsPage = (courseId:number, page:PageQuery) => createSele
             .slice(start, end); // page the array
       }
 );
-  
+
+export const selectLessonsLoading = createSelector(
+    selectLessonsState,
+    //Projector
+    lessonsState => lessonsState.loading
+)

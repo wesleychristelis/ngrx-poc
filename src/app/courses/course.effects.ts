@@ -40,11 +40,10 @@ export class CourseEffects {
         })
       );
     
-      @Effect()
-  loadLessonsPage$ = this.actions$
-    .pipe(
-      ofType<LessonsPageRequested>(CourseActionTypes.LessonsPageRequested), // listen for this action
-      mergeMap(({payload}) => // combines the observables
+    @Effect()
+    loadLessonsPage$ = this.actions$.pipe(
+        ofType<LessonsPageRequested>(CourseActionTypes.LessonsPageRequested), // listen for this action
+        mergeMap(({payload}) => // combines the observables
             this.coursesService.findLessons(payload.courseId, payload.page.pageIndex, payload.page.pageSize) // call the backend
             .pipe(
                 catchError(err => {
@@ -53,7 +52,7 @@ export class CourseEffects {
                     return of([]);
                 })
             )
-      ),
-      map(lessons => new LessonsPageLoaded({lessons})) // dispatch we have the lessons
+        ),
+        map(lessons => new LessonsPageLoaded({lessons})) // dispatch we have the lessons
     );
 }
